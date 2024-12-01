@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>calculator-app</title>
+        <link rel="stylesheet" href="calculator.css">
+    </head>
+    <body>
+        <h1 align="middle">Calculator</h1>
+        <div class="calculator-body">
+            <p class="brand-name">Kiran</p>
+            <input type="text" class="inputbox" id="input">
+            <div class="btn-container">
+                <button class="btn btn-text" style="color:black; background-color:tomato; " onclick="clearScreen()"><b>AC</b></button>
+                <button class="btn btn-text special-btn"  onclick="pressNumber(1)">( )</button>
+                <button class="btn btn-text special-btn"  onclick="pressNumber('%')">%</button>
+                <button class="btn btn-text special-btn"  onclick="pressNumber('/')">/</button>
+
+                <button class="btn btn-text" onclick="pressNumber(1)">1</button>
+                <button class="btn btn-text" onclick="pressNumber(2)">2</button>
+                <button class="btn btn-text" onclick="pressNumber(3)">3</button>
+                <button class="btn btn-text special-btn" onclick="pressNumber('*')">x</button>
+
+                <button class="btn btn-text" onclick="pressNumber(4)">4</button>
+                <button class="btn btn-text" onclick="pressNumber(5)">5</button>
+                <button class="btn btn-text" onclick="pressNumber(6)">6</button>
+                <button class="btn btn-text special-btn" onclick="pressNumber('-')"><b>-</b></button>
+
+                <button class="btn btn-text" onclick="pressNumber(7)">7</button>
+                <button class="btn btn-text" onclick="pressNumber(8)">8</button>
+                <button class="btn btn-text" onclick="pressNumber(9)">9</button>
+                <button class="btn btn-text special-btn" onclick="pressNumber('+')">+</button>
+
+                <button class="btn btn-text" onclick="pressNumber(0)">0</button>
+                <button class="btn btn-text" onclick="pressNumber('.')"><b>.</b></button>
+                <button class="btn btn-text" onclick="pressNumber('π')">π</button>
+                <button class="btn btn-text special-btn" onclick="calculate()" >=</button>
+            </div>
+        </div>
+        <script>
+            function pressNumber(n){
+                const selectinput=document.getElementById("input");
+                selectinput.value+=n;
+            }
+
+            function calculate(){
+                const selectinput=document.getElementById("input");
+                let ans=selectinput.value;
+                selectinput.value=eval(ans);
+            }
+            function clearScreen(){
+                const selectinput=document.getElementById("input");
+                selectinput.value=null;
+            }
+        </script>
+
+    </body>
+</html>
